@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+body {
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif,tahoma;
+	margin: 0px;
+	font-weight: normal;
+}
+
+header {
+	
+	padding: 5px 0px;
+	margin-bottom: 50px;
+	height: 50px;
+	
+	
+	background-color: #000000;
+	
+	color: #fff;
+	
+	box-shadow: 0px 2px 2px #ccc;
+}
+
+header > div {
+	margin-left: 8px;
+	
+}
+
+footer {
+	padding: 0px 10px;
+	margin-bottom: 10px;
+}
+
+#conteudo {
+	padding: 0px 10px;
+}
+
+#tela_login{
+	width: 300px;
+	margin: auto;
+	margin-top: 150px;
+	background-color: yellow;
+	
+}
+
+.grid-login {
+	background-color: #f2f2f2;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	margin-top: 10px;
+	padding: 10px;
+	
+}
+
+h1 {
+	font-size: 30px;
+	font-weight: 500;
+	padding: 0px;
+	margin: 0px;
+	
+}
+
+.toolbarMargin {
+	margin-top: 20px;
+}
+
+.DataTableMargin {
+	margin-top: 20px;
+}
+
+.painel {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.rotulo {
+	width: 150px;
+}
+
+.ui-panelgrid td {
+	height: 34px;
+	
+}
+
+#MenuPrincipal{
+	float: right;
+	margin-right: 110px;
+}
+
+.formularioMenu {
+	display: inline-block;
+}
+
+.LogoDiv {
+	float: left;
+}
+
+.Usuario {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	margin-right: 60px;
+}
+
+/* Menu personalizado */
+
+.MenuTemaGeral {
+	border: 0px !important;
+	padding: 0px !important;
+	background: none !important;
+}
+
+.MenuTemaGeral .ui-menu-parent > a .ui-menuitem-text, .MenuTemaGeral > .ui-menu-list > .ui-menuitem > a > .ui-menuitem-text {
+	color: #ffffff !important;
+}
+
+.MenuTemaGeral .ui-icon-triangle-1-s {
+	background: url(#{resource['imagens:setabranca_v3.png']}) no-repeat;
+}

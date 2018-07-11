@@ -1,0 +1,102 @@
+//package prosiaps.controller;
+//
+//import java.io.Serializable;
+//import java.util.List;
+//
+//import javax.annotation.PostConstruct;
+//import javax.faces.bean.ViewScoped;
+//import javax.inject.Inject;
+//import javax.inject.Named;
+//import javax.persistence.EntityManager;
+//import javax.persistence.EntityManagerFactory;
+//import javax.persistence.Persistence;
+//
+//
+//import prosiaps.model.Logradouro;
+//import prosiaps.service.CadastroLogradouroService;
+//import prosiaps.service.NegocioException;
+//import prosiaps.util.FacesUtil;
+//import prosiaps.model.Bairro;
+//
+//@Named
+//@ViewScoped
+//
+//public class CadastroLogradouroBean implements Serializable{
+//
+//	/**
+//	 * 
+//	 */
+//	private static final long serialVersionUID = 1L;
+//	
+//	
+//	
+//	private List<Bairro> bairros;
+//	
+//	
+//	@Inject
+//	public CadastroLogradouroService cadastroLogradouroService;
+//	
+//	
+//	private Logradouro logradouro;
+//	
+//	
+//	public void salvar(){
+//		
+//		try {
+//			this.cadastroLogradouroService.salvar(logradouro);
+//			
+//			FacesUtil.addSuccessMessage("Cadastro realizado com sucesso");
+//		} catch (NegocioException e) {
+//			// 
+//			
+//			FacesUtil.addErrorMessage(e.getMessage());
+//			
+//		}
+//		
+//	}
+//	
+//	
+//	@PostConstruct
+//	public void init(){
+//		
+//		this.limpar();
+//		
+//	}
+//	
+//	
+//	public void limpar(){
+//		
+//		this.logradouro = new Logradouro();
+//		
+//	}
+//	
+//	
+//	////////////////////////////
+//	public CadastroLogradouroBean(){
+//		logradouro = new Logradouro();
+//	}
+//	
+//	
+//	
+//	
+//	
+//	public Logradouro getLogradouro() {
+//		return logradouro;
+//	}
+//	
+//	public void setLogradouro(Logradouro logradouro) {
+//		this.logradouro = logradouro;
+//	}
+//
+//	public List<Bairro> getBairros() {
+//		return bairros;
+//	}
+//
+//	public void setBairros(List<Bairro> bairros) {
+//		this.bairros = bairros;
+//	}
+//
+//
+//	
+//
+//}

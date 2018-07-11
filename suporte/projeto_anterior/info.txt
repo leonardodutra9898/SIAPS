@@ -1,0 +1,10 @@
+Meu nome é leonardo.
+
+Este projeto da área da saúde está sendo construído para setores da atenção primária.
+
+Hoje encontrei o verdadeiro arquivo do projeto. Hoje é 25 de outubro de 2016.
+
+
+Hoje, (26out2016) consegui completar as configura��es.
+
+Agora o servidor est� quase todo pronto, falta agora o servidor do postgresql

@@ -1,0 +1,6 @@
+configurações de acesso ao servidor mysql
+
+use: root
+sen: ##2016##
+
+db: projeto_h

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+>
+
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Menu [SIAPS]</title>
+<h:outputStylesheet library="css" name="sistema.css"></h:outputStylesheet>
+</h:head>
+
+<h:body>
+
+<h:form id="frmMenu">
+
+<p:menubar autoDisplay="false">
+
+<p:submenu label="Básicos">
+<p:menuitem value="Logradouro"/>
+<p:separator />
+<p:menuitem value="Dados Pessoais"/>
+<p:menuitem value="E-mails"/>
+</p:submenu>
+
+<p:submenu label="Cadastros">
+	<p:submenu label="Logradouro">
+		<p:menuitem value="Novo" outcome="/logradouro/CadastroLogradouro"/>
+		<p:menuitem value="Pesquisa" icon="ui-icon-search" outcome="/logradouro/PesquisaLogradouro"/>
+	</p:submenu>
+	<p:submenu label="Agendamentos">
+		<p:menuitem value="Novo" outcome="/agendamento/NovoAgendamento"/>
+		<!--  <p:menuitem value="Pesquisa" icon="ui-icon-search" outcome="/logradouro/PesquisaLogradouro"/>  -->
+	</p:submenu>	
+</p:submenu>
+
+
+<p:menuitem value="Sair"/>
+</p:menubar>
+
+</h:form>
+
+</h:body>
+</html>
