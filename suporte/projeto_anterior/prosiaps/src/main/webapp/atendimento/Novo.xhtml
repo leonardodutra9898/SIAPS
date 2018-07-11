@@ -1,0 +1,117 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml" 
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:o="http://omnifaces.org/ui"
+>
+
+<ui:define name="titulo">Atendimento - [SIAPS]</ui:define>
+
+
+
+
+
+<ui:define name="corpo">
+
+
+
+<f:metadata >
+	<!-- <o:viewParam name="logradouro" value="#{cadastroLogradouroBean.logradouro}" />   -->
+</f:metadata>
+
+<h:form id="frmCadastroLogradouro">
+<h1>Atendimento -> <STRONG>[ Novo ]</STRONG></h1>
+
+<p:messages id="messages" autoUpdate="true" closable="true"/>
+
+<p:toolbar styleClass="toolbarMargin">
+
+<p:toolbarGroup>
+
+
+
+<p:button value="Finalizar Atendimento"/>
+<!--  <p:commandButton value="Salvar" id="botaoSalvar"/> -->
+<p:separator />
+<p:button value="Gerar Prontuário"/>
+<p:button value="Gerar Receituário"/>
+<p:separator />
+<p:button value="Novo Atendimento"/>
+
+</p:toolbarGroup>
+
+<p:toolbarGroup align="right">
+
+<p:button value="Pesquisar Atendimentos" outcome="At_Pesquisa" title="Verificar Atendimentos Realizados" />
+
+
+</p:toolbarGroup>
+
+</p:toolbar>
+
+<p:panelGrid columns="2" id="painel" styleClass="painel" columnClasses="rotulo, campo">
+
+<p:outputLabel value="Nº Prontuário"/>
+<p:inputText id="txtP" size="20" maxlength="20" value="2016.001.00001"/>
+
+
+<p:outputLabel value="Código do Paciente" for="txtCD"/>
+<p:inputText id="txtCD" size="5" maxlength="5"/>
+
+<p:outputLabel value="CID (Código Internacional de Doenças)" for="txtCID"/>
+<p:inputText id="txtCID" size="5" maxlength="5"/>
+
+<p:outputLabel value="Nº CRM (Médico)" for="txtCRM"/>
+<p:inputText id="txtCRM" size="5" maxlength="5"/>
+
+<p:outputLabel value="Nome do Paciente" for="txtNP"/>
+<p:inputText id="txtNP" size="50" maxlength="50"/>
+
+<p:outputLabel for="SC" value="Situação Clínica do Paciente (atual):" />
+        <p:selectOneRadio id="SC" >
+            <f:selectItem itemLabel="Crítico" />
+            <f:selectItem itemLabel="Em Crise" />
+            <f:selectItem itemLabel="Em U.T.I"/>
+            <f:selectItem itemLabel="Com trauma leve"/>
+            <f:selectItem itemLabel="Com trauma grave"/>
+            <f:selectItem itemLabel="Leve incidência sintomática"/>
+</p:selectOneRadio>
+
+<p:outputLabel value="Unidade Básica de Saúde (UBS)" for="mnuS"/>
+<p:selectOneMenu id="mnuS">
+	<f:selectItem itemLabel="Centro Regional Municipal de Atenção Emergencial"/>
+	
+</p:selectOneMenu>
+
+<p:outputLabel value="Diagnóstico"/>
+<p:inputTextarea autoResize="false" rows="9" scrollHeight="10" cols="60"/>
+ 
+<p:outputLabel value="UF" for="mnuUF"/>
+<p:selectOneMenu id="mnuUF">
+	
+	<f:selectItem itemLabel="CE"/>
+	<f:selectItem itemLabel="PI"/>
+	<f:selectItem itemLabel="PE"/>
+	<f:selectItem itemLabel="RJ"/>
+	
+</p:selectOneMenu>
+
+<p:outputLabel value="Cidade" for="mnuCidade"/>
+<p:selectOneMenu id="mnuCidade">
+	
+	<f:selectItem itemLabel="Crateús"/>
+	
+	<f:selectItem itemLabel="Teresina"/>
+	<f:selectItem itemLabel="Rio de Janeiro"/>
+</p:selectOneMenu>
+
+</p:panelGrid>
+</h:form>
+
+</ui:define>
+
+
+
+</ui:composition>

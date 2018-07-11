@@ -1,0 +1,120 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml" 
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:o="http://omnifaces.org/ui"
+>
+
+<ui:define name="titulo">Agendamento - [SIAPS]</ui:define>
+
+
+
+
+
+<ui:define name="corpo">
+
+
+
+<f:metadata >
+	<!-- <o:viewParam name="logradouro" value="#{cadastroLogradouroBean.logradouro}" />   -->
+</f:metadata>
+
+<h:form id="frmCadastroLogradouro">
+<h1>Agendamento -> <STRONG>[ Consulta ]</STRONG></h1>
+
+<p:messages id="messages" autoUpdate="true" closable="true"/>
+
+<p:toolbar styleClass="toolbarMargin">
+
+<p:toolbarGroup>
+
+
+<p:button value="Pesquisar"/>
+
+<p:separator/>
+
+<p:button value="Agendar Nova Consulta" outcome="/agendamento/NovoAgendamento"/>
+<!--  <p:commandButton value="Salvar" id="botaoSalvar"/> -->
+
+
+
+</p:toolbarGroup>
+
+<p:toolbarGroup align="right">
+
+<p:button value="Checar Agendamento"/>
+
+
+</p:toolbarGroup>
+
+</p:toolbar>
+
+<p:panelGrid columns="2" id="painel" styleClass="painel" columnClasses="rotulo, campo">
+
+<p:outputLabel value="Pesquisa por Código" for="txtPC"/>
+<p:inputText id="txtPC" size="5" maxlength="5"/>
+
+<p:outputLabel value="Pesquisa por Nome do Paciente" for="txtNP"/>
+<p:inputText id="txtNP" size="50" maxlength="100"/>
+
+
+ 
+
+
+
+</p:panelGrid>
+
+
+
+
+<p></p>
+
+<p:dataTable id="agendamentosTable" var="ag" styleClass="DataTableMargin" 
+emptyMessage="Nenhum Agendamento Encontrado" rows="30" paginator="true" paginatorAlwaysVisible="false" 
+paginatorPosition="bottom" value="#{dtPesquisaView.agendamentos}">
+
+<p:column headerText="#">
+	<h:outputText value="#{ag.cd}"/>
+</p:column>
+
+<p:column headerText="Código Agendamento">
+	<h:outputText value="#{ag.cd}"/>
+</p:column>
+
+<p:column headerText="Informações Relevantes">
+	<h:outputText value="#{ag.info}"/>
+</p:column>
+
+<p:column headerText="Data Agendada">
+	<h:outputText value="#{ag.data}"/>
+</p:column>
+
+<p:column headerText="Estabelecimento de Saúde">
+	<h:outputText value="#{ag.est}"/>
+</p:column>
+
+<p:column headerText="Cidade">
+	<h:outputText value="#{ag.cidade}"/>
+</p:column>
+
+<p:column headerText="UF">
+	<h:outputText value="#{ag.uf}"/>
+</p:column>
+
+<p:column>
+	<p:button icon="ui-icon-pencil" title="Editar"/>
+	<p:commandButton icon="ui-icon-trash" title="Excluir"/>
+</p:column>
+
+</p:dataTable>
+
+
+</h:form>
+
+</ui:define>
+
+
+
+</ui:composition>

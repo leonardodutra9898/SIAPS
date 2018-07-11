@@ -1,0 +1,89 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml" 
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+>
+
+<ui:define name="titulo">Pesquisa de Logradouros - [SIAPS]</ui:define>
+
+<ui:define name="corpo">
+
+<h:form id="frmPesquisaLogradouro">
+<h1>Pesquisa de Logradouros</h1>
+
+<p:toolbar styleClass="toolbarMargin">
+
+<p:toolbarGroup>
+
+
+<p:commandButton value="Pesquisar" id="botaoPesquisar"/>
+
+</p:toolbarGroup>
+
+<p:toolbarGroup align="right">
+
+<p:button value="Novo" outcome="/logradouro/CadastroLogradouro"/>
+
+</p:toolbarGroup>
+
+</p:toolbar>
+
+
+<p:panelGrid columns="2" id="painel" styleClass="painel" columnClasses="rotulo, campo">
+
+<p:outputLabel value="Logradouro" for="txtlogradouro"/>
+<p:inputText id="txtlogradouro" size="50" maxlength="100"/>
+
+<p:outputLabel value="CEP" for="txtCEP"/>
+<p:inputText id="txtCEP" size="10" maxlength="10"/>
+
+</p:panelGrid>
+
+<p></p>
+
+<p:dataTable id="logradouroTable" var="logradouro" styleClass="DataTableMargin" 
+emptyMessage="Nenhum Logradouro Encontrado" rows="30" paginator="true" paginatorAlwaysVisible="false" 
+paginatorPosition="bottom">
+
+<p:column headerText="#">
+	<h:outputText value="aas"/>
+</p:column>
+
+<p:column headerText="Logradouro">
+	<h:outputText value="aas"/>
+</p:column>
+
+<p:column headerText="Nº">
+	<h:outputText value="aas"/>
+</p:column>
+
+<p:column headerText="Bairro">
+	<h:outputText value="aas"/>
+</p:column>
+
+<p:column headerText="Cidade">
+	<h:outputText value="aas"/>
+</p:column>
+
+<p:column headerText="UF">
+	<h:outputText value="aas"/>
+</p:column>
+
+<p:column headerText="Logradouro">
+	<h:outputText value="aas"/>
+</p:column>
+
+<p:column>
+	<p:button icon="ui-icon-pencil" title="Editar"/>
+	<p:commandButton icon="ui-icon-trash" title="Excluir"/>
+</p:column>
+
+</p:dataTable>
+
+</h:form>
+
+</ui:define>
+
+</ui:composition>

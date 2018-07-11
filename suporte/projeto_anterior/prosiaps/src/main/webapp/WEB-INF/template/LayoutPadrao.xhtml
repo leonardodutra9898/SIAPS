@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+>
+
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title><ui:insert name="titulo">Sistema Informatizado de Atenção Primária em Saúde [SIAPS]</ui:insert></title>
+
+<h:outputStylesheet library="css" name="sistema.css"></h:outputStylesheet>
+
+
+
+
+<link rel="icon" type="image/x-icon" href="#{resource['imagens/icone4.ico']}"/>
+
+
+</h:head>
+<h:body>
+<p:ajaxStatus styleClass="ajax-status">
+<f:facet name="start">
+<h:graphicImage library="imagens" name="loading.gif" />
+</f:facet>
+<f:facet name="complete">
+<h:outputText value=""/>
+</f:facet>
+</p:ajaxStatus>
+
+<header>
+<div class="LogoDiv">
+<h:link outcome="/Home">
+	<h:graphicImage library="imagens" name="siaps_v5.png" title="Sistema Informatizado de Atenção Primária em Saúde [SIAPS]"/>
+</h:link>
+</div>
+
+<div id="MenuPrincipal">
+
+<span class="Usuario">Olá Fulano!.</span>
+
+
+
+<ui:insert name="PMenu">
+
+<h:form id="frmMenu" styleClass="formularioMenu">
+
+
+
+<p:menubar autoDisplay="false" styleClass="MenuTemaGeral">
+
+<p:submenu label="Atendimento">
+<p:menuitem value="Novo" outcome="/atendimento/Novo"/>
+<p:separator />
+<p:menuitem value="Consultar" outcome="/atendimento/At_Pesquisa" icon="ui-icon-search"/>
+<p:menuitem value="Em andamento" outcome="/atendimento/At_Andamento"/>
+</p:submenu>
+
+<p:submenu label="Agendamento">
+	
+	
+		<p:menuitem value="Novo" outcome="/agendamento/NovoAgendamento"/>
+		<p:menuitem value="Consultar" outcome="/agendamento/ConsultaAgendamento" icon="ui-icon-search"/>
+	
+
+		
+</p:submenu>
+
+
+<p:menuitem value="Sair"/>
+</p:menubar>
+
+
+
+
+</h:form>
+
+</ui:insert>
+
+
+
+
+	
+</div>
+
+
+
+
+
+
+<div style="clear: both;"></div>
+</header>
+
+<div id="conteudo">
+<ui:insert name="corpo"></ui:insert>
+</div>
+
+<footer>
+
+</footer>
+
+</h:body>
+
+
+</html>
